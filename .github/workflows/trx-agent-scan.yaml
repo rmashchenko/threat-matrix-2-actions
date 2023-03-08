@@ -4,7 +4,8 @@ on:
     - 'main'
     - 'master'
   pull_request:
-    - 'opened'
+    types:
+      - 'opened'
 jobs:
   execute-scan-workflow:
     uses: threatrix/threat-agent-scan/.github/workflows/scan-repo-reusable.yaml@master
