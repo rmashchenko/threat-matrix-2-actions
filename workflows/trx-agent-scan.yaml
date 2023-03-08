@@ -1,0 +1,16 @@
+on:
+  push:
+   branches:
+    - 'main'
+    - 'master'
+  pull_request:
+    - 'opened'
+jobs:
+  execute-scan-workflow:
+    uses: threatrix/threat-agent-scan/.github/workflows/scan-repo-reusable.yaml@master
+    with:
+      eid: f512a2c4-b898-4166-bf9e-d5f6c097e49d
+      oid: b9320501-45f8-4d61-833f-b15f4e143b49
+    secrets:
+      TOKEN: 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
+      THREATRIX_SERVER_API_KEY: github-U_kgDOB4oS5g
