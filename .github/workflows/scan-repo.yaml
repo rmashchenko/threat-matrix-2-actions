@@ -3,10 +3,9 @@ on:
   workflow_dispatch:
 jobs:
   call-workflow-passing-data:
-    uses: threatrix/threat-agent-scan/.github/workflows/scan-repo-reusable.yaml@master
-    with:  
-      eid: ${{ vars.EID }}
-      oid: ${{ vars.ORGID }}
+    uses: threatrix/threat-agent-scan/.github/workflows/scan-repo-reusable.yaml@oid_and_eid_from_secrets
     secrets: 
       TOKEN: ${{ secrets.TOKEN }}
       THREATRIX_SERVER_API_KEY: ${{ secrets.THREATRIX_SERVER_API_KEY }}
+      THREATRIX_EID: ${{ secrets.THREATRIX_EID }}
+      THREATRIX_OID: ${{ secrets.THREATRIX_OID }}
